@@ -10,13 +10,27 @@ module.exports = {
   attributes: {
   	username: {
   		type: 'string',
-  		required: true
-
+  		required: true,
+      unique: true
   	},
   	password: {
   		type: 'string',
   		required: true
-  	}
+  	},
+    toJSON: function () {
+      var obj = this.toObject();
+      delete obj.password;
+      delete obj.socialProfiles;
+      return obj;
+    }
+  },
+  beforeUpdate: function (values, next) {
+      CipherService.hashPassword(values);
+      next();
+  },
+  beforeCreate: function (values, next) {
+      CipherService.hashPassword(values);
+      next();
   }
 };
 
