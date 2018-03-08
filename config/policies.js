@@ -29,6 +29,11 @@ module.exports.policies = {
   '*': ['isAuthenticated'],
   AuthController: {
     '*': true
+  },
+  PostController: {
+    store: 'isAdminuser',
+    update: 'isAdminuser',
+    delete: 'isAdminuser'
   }
 
   /***************************************************************************

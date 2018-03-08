@@ -35,6 +35,11 @@ module.exports.routes = {
   'post /login': 'AuthController.signin',
   'post /signup': 'AuthController.signup',
   'post /logout': 'AuthController.logout',
+  'get /post': 'PostController.showall',
+  'get /post/:id': 'PostController.show',
+  'post /post': 'PostController.store',
+  'put /post/:id': 'PostController.update',
+  'delete /post/:id': 'PostController.delete'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

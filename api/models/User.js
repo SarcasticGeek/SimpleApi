@@ -17,10 +17,17 @@ module.exports = {
   		type: 'string',
   		required: true
   	},
+    adminusercheck: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+    posts: {
+      collection: 'post',
+      via: 'writer'
+    },
     toJSON: function () {
       var obj = this.toObject();
       delete obj.password;
-      delete obj.socialProfiles;
       return obj;
     }
   },
