@@ -31,6 +31,7 @@ module.exports.policies = {
     '*': true
   },
   PostController: {
+    index: 'userRole',
     store: 'isAdminuser',
     update: 'isAdminuser',
     delete: 'isAdminuser'

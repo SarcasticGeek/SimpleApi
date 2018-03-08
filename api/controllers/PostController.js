@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	showall: function (req ,res) {
+	index: function (req ,res) {
 		Post.find().exec(function (err,posts) {
 			if(err){
         		return res.badRequest(err);

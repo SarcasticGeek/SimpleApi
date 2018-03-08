@@ -35,7 +35,7 @@ module.exports.routes = {
   'post /login': 'AuthController.signin',
   'post /signup': 'AuthController.signup',
   'post /logout': 'AuthController.logout',
-  'get /post': 'PostController.showall',
+  'get /post': 'PostController.index',
   'get /post/:id': 'PostController.show',
   'post /post': 'PostController.store',
   'put /post/:id': 'PostController.update',

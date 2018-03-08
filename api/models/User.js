@@ -25,6 +25,11 @@ module.exports = {
       collection: 'post',
       via: 'user'
     },
+    role: {
+      model: 'role'
+    },
+
+    //---------- JWT Configs
     toJSON: function () {
       var obj = this.toObject();
       delete obj.password;
