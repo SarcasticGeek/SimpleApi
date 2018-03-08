@@ -15,16 +15,30 @@ module.exports = function (req, res, next) {
       if (!user) 
        return res.unauthorized(null, info && info.code, info && info.message);
      req.user = user;
-     
-     var permissions = ['show','store','update','delete'];
+
+     var permissions = ['index','show','store','update','delete'];
      var controller = req.options['controller'];
      var action = req.options['action'];
      var authuser = req.user;
-     console.log(authuser);
-     authuser.role.permissions.forEach(function(permission) {
-         if(permission == action)
-             next();
+     var ok_per = false;
+     User.findOne({id: authuser.id}).populateAll().exec(function(err,user){
+        if(err){
+            return res.serverError(err);
+        }
+        Permission.find().populate('roles')
+        .exec(function (err, permissions){
+            permissions.forEach(function(permission) {
+                if(permission.name === action){
+                    ok_per = true;
+                }
+            });
+            if(ok_per){
+               return res.ok();
+            }else{
+               return res.forbidden('You do not have a permission.');
+            }
+        });
      });
-     return res.forbidden('You do not have a permission.');
+    next();
     })(req, res);
 };

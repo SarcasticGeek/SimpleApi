@@ -11,7 +11,7 @@ module.exports = {
 
   	name: {
   		type: 'string',
-  		enum: ['show','store','update','delete']
+  		enum: ['index','show','store','update','delete']
   	},
   	roles: {
   		collection: 'role',
