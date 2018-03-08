@@ -7,19 +7,68 @@
 
 module.exports = {
 	showall: function (req ,res) {
-		// body...
+		Post.find().exec(function (err,posts) {
+			if(err){
+        		return res.badRequest(err);
+      		}
+      		return res.ok(posts);
+		});
 	},
 	show: function (req ,res) {
-		// body...
+		var post_id = req.param('id');
+		Post.findOne({ id:post_id }).exec(function (err, post){
+		  if (err) {
+		    return res.serverError(err);
+		  }
+		  if (!post) {
+		    return res.notFound('Could not find post, sorry.');
+		  }
+		  return res.ok(post);
+		});
 	},
 	store: function (req ,res) {
-		// body...
+		Post.create({content:req.param('content'), user:req.user.id}).exec(function (err, post){
+		  if (err) { return res.serverError(err); }
+		  // req.user.posts.add([post]);
+		  // req.user.save()
+		  // .then(res.ok(data))
+		  // .catch(function (error) {
+		  // 	res.serverError(error);
+		  // });
+		  return res.ok();
+		});
 	},
 	update: function (req ,res) {
-		// body...
+		// Post.update({id: req.param('id')},req.param('content')).exec(function afterwards(err, updated){
+		//   if (err) {
+		//     return res.serverError(err);
+		//   }
+		//   return res.ok();
+		// });
+
+		Post.findOne({ id: req.param('id') }).exec(function (err, post){
+		  if (err) {
+		    return res.serverError(err);
+		  }
+		  if (!post) {
+		    return res.notFound('Could not find Post, sorry.');
+		  }
+		  post.content = req.param('content');
+		  post.save()
+		  .then(res.ok(post))
+		  .catch(function (error) {
+		  	res.serverError(error);
+		  });
+		});
 	},
 	delete: function (req ,res) {
-		// body...
+		Post.destroy({ id: req.param('id') }).exec(function (err){
+		  if (err) {
+		   return res.serverError(err);
+		    }
+		  
+		  return res.ok();
+		});
 	} 
 };
 

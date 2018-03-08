@@ -23,7 +23,7 @@ module.exports = {
     },
     posts: {
       collection: 'post',
-      via: 'writer'
+      via: 'user'
     },
     toJSON: function () {
       var obj = this.toObject();

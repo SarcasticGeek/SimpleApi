@@ -13,7 +13,7 @@ module.exports = {
   		type: 'string',
   		required: true
   	},
-  	writer: {
+  	user: {
   		model: 'user'
   	}
 
