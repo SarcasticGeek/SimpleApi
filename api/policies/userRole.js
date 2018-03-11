@@ -25,20 +25,26 @@ module.exports = function (req, res, next) {
         if(err){
             return res.serverError(err);
         }
-        Permission.find().populate('roles')
-        .exec(function (err, permissions){
-            permissions.forEach(function(permission) {
-                if(permission.name === action){
-                    ok_per = true;
+        if(user.role == null){
+            return res.forbidden('You do not have a permission.');
+        }else{
+            Permission.find().populate('roles')
+            .exec(function (err, permissions){
+                permissions.forEach(function(permission) {
+                    if(permission.name === action){
+                        ok_per = true;
+                    }
+                });
+                if(ok_per){
+                     res.ok();
+                }else{
+                    return res.forbidden('You do not have a permission.');
                 }
             });
-            if(ok_per){
-               return res.ok();
-            }else{
-               return res.forbidden('You do not have a permission.');
-            }
-        });
+        }
+
      });
-    next();
+    //next();
+    //return res.forbidden('You do not have a permission.');
     })(req, res);
 };
