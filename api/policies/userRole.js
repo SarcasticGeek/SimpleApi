@@ -36,7 +36,8 @@ module.exports = function (req, res, next) {
                     }
                 });
                 if(ok_per){
-                     res.ok();
+                     //res.ok();
+                     next();
                 }else{
                     return res.forbidden('You do not have a permission.');
                 }
