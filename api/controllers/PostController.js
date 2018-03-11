@@ -54,10 +54,10 @@ module.exports = {
 		    return res.notFound('Could not find Post, sorry.');
 		  }
 		  post.content = req.param('content');
-		  post.save()
-		  .then(res.ok(post))
-		  .catch(function (error) {
-		  	res.serverError(error);
+		  post.save(function (error) {
+				if(error)
+					return res.serverError(error);
+				return res.ok(post)	
 		  });
 		});
 	},
