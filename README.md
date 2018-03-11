@@ -1,3 +1,23 @@
 # SimpleApi
 
-a [Sails](http://sailsjs.org) application
+a [Sails](http://sailsjs.org) application in which no frontend views, using Authentication via Passport lib and JWT (json web token), and made an RESTful api for simple object `Post`.
+
+## Database ER Diagram 
+
+[Follow this link](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=database%20Diagram%20-%20simple%20API.html#R7VpLc%2BMoEP41OsallxXnGNvJzGWrpuZRu3vEEpaoIKFBOLHn1y8IkARYccb2eDaZ5OBI3Q0N3fTX3dhetCi3Hyioi79IBrEX%2BtnWi5ZeGM6uQ%2F4pCDtJiGNFyCnKJCnoCV%2FQD6iIvqJuUAYbQ5ARghmqTWJKqgqmzKABSsmTKbYm2NRagxw6hC8pwC71b5SxQm0rTHr6R4jyQmsOkhvJWYH0IadkUyl9Xhit2z%2FJLoGeS220KUBGngak6M6LFpQQJp%2FK7QJiYVptNjnufoTbrZvCir1kQDiVIx4B3kC95ATzsfNaLI%2FtlEmS7xuxpnkJaI4qL7rlXL%2Fe8k9ObHcm6FeM1JIXD3gMbtkVwChX41K%2BOEhNdgZTQgFDRMlwC0KKUQV71fwpV%2F%2FbBa404VsjZpNEvtWVLchptU0rqE05ar8YrplkzgTTXio38zNr%2BBUaN9wWFSjhpfXWoGmeCL34fkFWokpsOi1g%2BnBp7ZTgi1t6QSFgMLtll1b8rc6eUxwaKsNHSBniiHor437ZIsNcocBSqpoTLrXGLQCuEQemaL4mFVP5IAjV%2Bz0oERaZ5CPEj1DMKgKYlVgI8ceGUfIAFwQT2uqOfD%2BKkkRwNLwKMaFhILSM74L7qVLhDnaAVGGr2BfcDkgKWD9AUkJGd1xkq7HVn%2FjDPzWpzon%2BJIh7ZnQtuU99vgkSlSWKYa7RRKByXN4p7nGePyioH8kTQfwGcP8TaYZn8Y%2FGfV4JMXFUf0O6OaDz51DLJDQ1qJ6DnyH%2Fz0ElB4L2ANUoKiW69Oxg6KK4kzi48xliGf%2B2r2CV3Ypanr%2BRGlamdTlz6JCGAcq0dIZASarsayHOtWRp2VgT7lvHLsVhhxmv%2FZVaQllBclIBfNdT53CL2D9amj%2F%2FK54n0%2B6AiRmedwffGNnQVEtJ%2BHV9RFtbPJqT7TO4GvqJIBHzXcaJTd%2FyDGROIRehRg3bAmuiODAnCkJrIm7CHDJnotb%2F3X5eeCSunSPhTybucaCwQT%2FAqn31zcNgxe%2F%2BIMdgBfG8688GsaU6NDPM%2Fc67qslUqvve7VAYyrM%2BGohXasyJPr%2BKLNeQ9bqBp3tl5nglOMYlVCLIK%2FHJeVxiB8uZPHLzFko2SEvUNC3cvxdu4v8LmvVjKqgDzdpIvbVyjPxeTf1UNRVNL1pOdbD3mjHhs3mJ8o4GF0eD97B2rm6i3xrWgRPWr6lLajsj3ScFR3dJ%2BrsJ2WsYiHf2zilOTBwPb47snLqWa2yiM3ZOYfhGO6cD0fn%2F7pzC6E12Tgd8ch6X6LuA3a%2F10L7L73FYXWGSPtjoqYlcToFkYIFmYEGxQsfAs%2B%2BQuI3prrteEi8n3y9ppxrQKRtI14P7ctqpHbCFglPbkcdeRDkTnRNO3e%2FCS1AJCzHSFnDieaxPGlKsoyQKZPMs2NFfi%2BW3G5rOvelyAAKq1nZRoERZ1mbdFwDBaICPYYEZ%2BCN3lRpF%2FUly48%2FMpHeWQ5RMTTCYnY4F%2FLX%2FbYUU73%2B%2FEt39Bw%3D%3D)
+
+
+## Install by Docker
+
+`cd ${code-workspace}/SimpleApi`
+`docker build -t 'simpleapi'`
+`docker run -p 1337:80 simpleapi`
+> Open your browser with Docker's IP
+
+## API docs
+
+[Follow this link](https://docs.google.com/spreadsheets/d/e/2PACX-1vRxOVEFE_OeltgRUknzt9q-p9r3P1BWZNj42l6CHypiqZgE9aXp7LOWL-H8rQjNRDH253BvLDP9fP8R/pubhtml)
+
+
+
+
